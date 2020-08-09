@@ -20,7 +20,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	/* font: inherit; */
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -87,6 +87,20 @@ img{
   /* min-width: 100%; */
   height: auto;
 }
+
+section{
+	position: relative;
+}
+
+/* .vertical_border{
+	display: block;
+	width: 1px;
+	height: 1850px;
+	background: #000;
+	position: absolute;
+	left: 12%;
+} */
+
 #container{
   background-color: #d3d3d3;
 }
@@ -127,7 +141,7 @@ canvas {
 main#our_history{
   padding: 10px;
   background: #fff;
-	padding-top: 100vh;
+	padding-top: 105vh;
 }
 #wrapper{
   width: 100%;
@@ -147,13 +161,15 @@ main#our_history section #flow{
 main#our_history section ul .numbers{
   display: block;
   margin-right: 10px;
-  flex-grow: 0
+  flex-grow: 0;
+	position: relative;
+	z-index: 5;
 }
 main#our_history section ul .explanation{
   margin-top: 18px;
   margin-left: 10px;
   word-break: break-all;
-  flex: 1
+  flex: 1;
 }
 main#our_history section ul li h2{
   font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
@@ -227,9 +243,80 @@ main#our_history section ul li img{
   animation-delay: .4s;
   top:83%;
 }
+
 #continue{
-  display: none;
+  display: block;
+  position: absolute;
+  top: 102.2%;
+  left: 0;
+  font-size: 12px;
+  font-weight: bold;
+
 }
+
+.allow{
+    position: absolute;
+  }
+
+#allow_tab_sp{
+	display: block;
+  top: 100.5%;
+  left: 4.2%;
+}
+#allow_tab_sp span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  margin-left: -12px;
+  border-left: 2px solid #ff790a;
+  border-bottom: 2px solid #ff790a;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb2 2s infinite;
+  animation: sdb2 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+#allow_tab_sp span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+#allow_tab_sp span:nth-of-type(2) {
+  top:8px;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+#allow_tab_sp span:nth-of-type(3) {
+  top:16px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+@-webkit-keyframes sdb2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 /* 可視範囲に入ったらアンダーラインを引く処理 */
 .JS_ScrollAnimationItem{
    padding-bottom: 2px;
@@ -269,11 +356,114 @@ main#our_history section ul li img{
       margin-top: 15px;
       font-size: 140%;
     }
-    #continue{
-      display: none;
-    }
+		#logo h2{
+		  font-size: 70%;
+		}
+		#arrows span:nth-of-type(1)::after{
+		  top:calc(83% - 1px);
+		}
+		#arrows span:nth-of-type(1)::before{
+		  animation: sdb 2s infinite;
+		  animation-delay: 0s;
+		  top:83%;
+		}
+
+		#arrows span:nth-of-type(2)::after{
+		  top:calc(87% - 1px);
+		}
+		#arrows span:nth-of-type(2)::before{
+		  animation: sdb 2s infinite;
+		  animation-delay: .2s;
+		  top:87%;
+		}
+
+		#arrows span:nth-of-type(3)::after{
+		  top:calc(91% - 1px);
+
+		}
+		#arrows span:nth-of-type(3)::before{
+		  animation: sdb 2s infinite;
+		  animation-delay: .4s;
+		  top:91%;
+		}
+		.vertical_border{
+			display: block;
+			width: 1px;
+			height: 2330px;
+			background: #000;
+			position: absolute;
+			left: 8%;
+		}
+		#allow_tab_sp{
+			display: block;
+			top:100.2%;
+			left: 11%;
+		}
+		#continue{
+			display: block;
+			position: absolute;
+			top: 101.5%;
+			left: 0;
+			font-size: 12px;
+			font-weight: bold;
+		}
 
 }
+
+
+@media screen and (min-width:321px) and ( max-width:359px){
+	#logo h1{
+		color: #fff;
+		font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
+		font-weight: bold;
+		margin-top: 15px;
+		font-size: 140%;
+	}
+	#logo h2{
+		font-size: 70%;
+	}
+	#arrows span:nth-of-type(1)::after{
+		top:calc(78% - 1px);
+	}
+	#arrows span:nth-of-type(1)::before{
+		animation: sdb 2s infinite;
+		animation-delay: 0s;
+		top:78%;
+	}
+
+	#arrows span:nth-of-type(2)::after{
+		top:calc(82% - 1px);
+	}
+	#arrows span:nth-of-type(2)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .2s;
+		top:82%;
+	}
+
+	#arrows span:nth-of-type(3)::after{
+		top:calc(86% - 1px);
+
+	}
+	#arrows span:nth-of-type(3)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .4s;
+		top:86%;
+	}
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 2325px;
+		background: #000;
+		position: absolute;
+		left: 8%;
+	}
+	#allow_tab_sp{
+		display: block;
+		top:100.5%;
+		left: 10.5%;
+	}
+}
+
 
 /*Galaxy S5以下の画面サイズの設定*/
 @media screen and (min-width:360px) and ( max-width:374px){
@@ -281,23 +471,78 @@ main#our_history section ul li img{
     overflow-x: hidden;
   }
   img{
-    /* min-width: 100%; */
     height: auto;
   }
 #logo{
   position: absolute;
-  /* z-index:9999; */
   left:50%;
   top:50%;
   transform: translate(-50%,-50%);
   text-align: center;
   }
-  #continue{
-    display: none;
-  }
+	#logo h1{
+		color: #fff;
+		font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
+		font-weight: bold;
+		margin-top: 15px;
+		font-size: 150%;
+	}
+	#logo h2{
+		font-size: 80%;
+	}
+	#arrows span:nth-of-type(1)::after{
+		top:calc(83% - 1px);
+	}
+	#arrows span:nth-of-type(1)::before{
+		animation: sdb 2s infinite;
+		animation-delay: 0s;
+		top:83%;
+	}
+
+	#arrows span:nth-of-type(2)::after{
+		top:calc(87% - 1px);
+	}
+	#arrows span:nth-of-type(2)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .2s;
+		top:87%;
+	}
+
+	#arrows span:nth-of-type(3)::after{
+		top:calc(91% - 1px);
+
+	}
+	#arrows span:nth-of-type(3)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .4s;
+		top:91%;
+	}
+
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 2310px;
+		background: #000;
+		position: absolute;
+		left: 7%;
+	}
+	#allow_tab_sp{
+		display: block;
+		top:100.2%;
+		left: 9.5%;
+	}
+	#continue{
+		display: block;
+		position: absolute;
+		top: 101.5%;
+		left: 0;
+		font-size: 12px;
+		font-weight: bold;
+	}
+
 }
 
-@media screen and (min-width:375px) and (max-width:719px){
+@media screen and (min-width:375px) and (max-width:410px){
   body{
     overflow-x: hidden;
   }
@@ -313,14 +558,291 @@ main#our_history section ul li img{
     transform: translate(-50%,-50%);
     text-align: center;
     }
+		#logo h1{
+			color: #fff;
+			font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
+			font-weight: bold;
+			margin-top: 15px;
+			font-size: 150%;
+		}
+		#logo h2{
+			font-size: 88%;
+		}
+		#arrows span:nth-of-type(1)::after{
+		  top:calc(83% - 1px);
+		}
+		#arrows span:nth-of-type(1)::before{
+		  animation: sdb 2s infinite;
+		  animation-delay: 0s;
+		  top:83%;
+		}
 
-  #continue{
-    display: none;
-  }
+		#arrows span:nth-of-type(2)::after{
+		  top:calc(87% - 1px);
+		}
+		#arrows span:nth-of-type(2)::before{
+		  animation: sdb 2s infinite;
+		  animation-delay: .2s;
+		  top:87%;
+		}
+
+		#arrows span:nth-of-type(3)::after{
+		  top:calc(91% - 1px);
+
+		}
+		#arrows span:nth-of-type(3)::before{
+		  animation: sdb 2s infinite;
+		  animation-delay: .4s;
+		  top:91%;
+		}
+		.vertical_border{
+			display: block;
+			width: 1px;
+			height: 2265px;
+			background: #000;
+			position: absolute;
+			left: 7%;
+		}
+		#allow_tab_sp{
+			display: block;
+			top:100.5%;
+			left: 9.5%;
+		}
 }
 
+
+@media screen and (min-width:411px)and (max-width:413px){
+	#logo h1{
+		color: #fff;
+		font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
+		font-weight: bold;
+		margin-top: 15px;
+		font-size: 155%;
+	}
+	#logo h2{
+		font-size: 95%;
+	}
+	#arrows span:nth-of-type(1)::after{
+		top:calc(83% - 1px);
+	}
+	#arrows span:nth-of-type(1)::before{
+		animation: sdb 2s infinite;
+		animation-delay: 0s;
+		top:83%;
+	}
+
+	#arrows span:nth-of-type(2)::after{
+		top:calc(87% - 1px);
+	}
+	#arrows span:nth-of-type(2)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .2s;
+		top:87%;
+	}
+
+	#arrows span:nth-of-type(3)::after{
+		top:calc(91% - 1px);
+
+	}
+	#arrows span:nth-of-type(3)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .4s;
+		top:91%;
+	}
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 2065px;
+		background: #000;
+		position: absolute;
+		left: 7%;
+	}
+	#allow_tab_sp{
+		display: block;
+		top:100.5%;
+		left: 9.2%;
+	}
+
+}
+
+
+@media screen and (min-width:414px)and (max-width:424px){
+	#logo h1{
+		color: #fff;
+		font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
+		font-weight: bold;
+		margin-top: 15px;
+		font-size: 155%;
+	}
+	#logo h2{
+		font-size: 95%;
+	}
+	#arrows span:nth-of-type(1)::after{
+		top:calc(82% - 1px);
+	}
+	#arrows span:nth-of-type(1)::before{
+		animation: sdb 2s infinite;
+		animation-delay: 0s;
+		top:82%;
+	}
+
+	#arrows span:nth-of-type(2)::after{
+		top:calc(86% - 1px);
+	}
+	#arrows span:nth-of-type(2)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .2s;
+		top:86%;
+	}
+
+	#arrows span:nth-of-type(3)::after{
+		top:calc(90% - 1px);
+
+	}
+	#arrows span:nth-of-type(3)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .4s;
+		top:90%;
+	}
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 2065px;
+		background: #000;
+		position: absolute;
+		left: 6%;
+	}
+	#allow_tab_sp{
+		display: block;
+		top:100.5%;
+		left: 8.2%;
+	}
+
+}
+
+@media screen and (min-width:425px)and (max-width:450px){
+	#logo h1{
+		color: #fff;
+		font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
+		font-weight: bold;
+		margin-top: 15px;
+		font-size: 155%;
+	}
+	#logo h2{
+		font-size: 95%;
+	}
+	#arrows span:nth-of-type(1)::after{
+		top:calc(82% - 1px);
+	}
+	#arrows span:nth-of-type(1)::before{
+		animation: sdb 2s infinite;
+		animation-delay: 0s;
+		top:82%;
+	}
+
+	#arrows span:nth-of-type(2)::after{
+		top:calc(86% - 1px);
+	}
+	#arrows span:nth-of-type(2)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .2s;
+		top:86%;
+	}
+
+	#arrows span:nth-of-type(3)::after{
+		top:calc(90% - 1px);
+
+	}
+	#arrows span:nth-of-type(3)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .4s;
+		top:90%;
+	}
+
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 2045px;
+		background: #000;
+		position: absolute;
+		left: 6%;
+	}
+	#allow_tab_sp{
+		display: block;
+		top:100.5%;
+		left: 8.2%;
+	}
+}
+
+
+/* どの端末にも当てはまらない用 */
+@media screen and (min-width:451px)and (max-width:689px){
+	#wrapper{
+		width: 689px;
+	}
+	#continue{
+	  display: block;
+	  position: absolute;
+	  top: 102.2%;
+	  left: 0;
+	  font-size: 12px;
+	  font-weight: bold;
+	}
+	#logo h1{
+		color: #fff;
+		font-family:  'Century Gothic', 'Avenir-Light', sans-serif;
+		font-weight: bold;
+		margin-top: 15px;
+		font-size: 155%;
+	}
+	#logo h2{
+		font-size: 95%;
+	}
+	#arrows span:nth-of-type(1)::after{
+		top:calc(82% - 1px);
+	}
+	#arrows span:nth-of-type(1)::before{
+		animation: sdb 2s infinite;
+		animation-delay: 0s;
+		top:82%;
+	}
+
+	#arrows span:nth-of-type(2)::after{
+		top:calc(86% - 1px);
+	}
+	#arrows span:nth-of-type(2)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .2s;
+		top:86%;
+	}
+
+	#arrows span:nth-of-type(3)::after{
+		top:calc(90% - 1px);
+
+	}
+	#arrows span:nth-of-type(3)::before{
+		animation: sdb 2s infinite;
+		animation-delay: .4s;
+		top:90%;
+	}
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 1850px;
+		background: #000;
+		position: absolute;
+		left: 24px;
+	}
+	#allow_tab_sp{
+		display: block;
+	  top: 100.5%;
+	  left: 33px;
+	}
+}
+
+
 /*タブレット用の設定*/
-@media screen and (min-width:720px)and (max-width:1150px){
+@media screen and (min-width:690px)and (max-width:1023px){
   body{
     overflow-x: hidden;
   }
@@ -329,6 +851,10 @@ main#our_history section ul li img{
     height: auto;
 		/* min-width: auto; */
   }
+	.vertical_border{
+		left: 3.2%;
+	}
+
   #logo{
   position: absolute;
   z-index: 10;
@@ -345,7 +871,6 @@ main#our_history section ul li img{
   section{
     position: relative;
   }
-
   main#our_history section ul{
     display: flex;
     margin-top: 20px;
@@ -361,10 +886,82 @@ main#our_history section ul li img{
   main#our_history section #flow{
     display: none;
   }
-  #continue{
-    display: none;
-  }
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 1850px;
+		background: #000;
+		position: absolute;
+		left: 3.5%;
+	}
+	#allow_tab_sp{
+		display: block;
+		top: 100.5%;
+		left: 4.6%;
+	}
+
 }
+
+
+/* iPad pro用 */
+@media screen and (min-width:1024px)and (max-width:1150px){
+	body{
+		overflow-x: hidden;
+	}
+	img{
+		max-width: 100%;
+		height: auto;
+		/* min-width: auto; */
+	}
+	#logo{
+	position: absolute;
+	z-index: 10;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	}
+	#wrapper{
+		width: 100%;
+		margin: 0 auto;
+		margin-left: calc(20% - 5px);
+	}
+	section{
+		position: relative;
+	}
+
+	main#our_history section ul{
+		display: flex;
+		margin-top: 20px;
+	}
+	main#our_history section ul .numbers{
+		display: block;
+		margin-right: 10px;
+	}
+	main#our_history section ul .explanation{
+		margin-top: 18px;
+		margin-left: 20px;
+	}
+	main#our_history section #flow{
+		display: none;
+	}
+	.vertical_border{
+		display: block;
+		width: 1px;
+		height: 1850px;
+		background: #000;
+		position: absolute;
+		/* top: 0; */
+		left: 2.5%;
+	}
+	#allow_tab_sp{
+		display: block;
+	  top: 100.5%;
+	  left: 3.3%;
+	}
+
+}
+
 
 /*PC用スタイル*/
 @media screen and (min-width:1151px)and (max-width:1679px){
@@ -376,6 +973,10 @@ main#our_history section ul li img{
     height: auto;
     /* min-width: auto; */
   }
+
+	.vertical_border{
+		display: none;
+	}
   #logo{
   position: absolute;
   /* z-index:9999; */
@@ -715,6 +1316,10 @@ main#our_history section ul li img{
 }
 
 
+#allow_tab_sp{
+	display: none;
+}
+
 @-webkit-keyframes sdb2 {
   0% {
     opacity: 0;
@@ -748,6 +1353,10 @@ main#our_history section ul li img{
     height: auto;
     /* min-width: auto; */
   }
+	.vertical_border{
+		display: none;
+	}
+
   #logo{
   position: absolute;
   /* z-index:9999; */
@@ -1086,6 +1695,9 @@ main#our_history section ul li img{
   font-weight: bold;
 }
 
+#allow_tab_sp{
+	display: none;
+}
 
 @-webkit-keyframes sdb2 {
   0% {

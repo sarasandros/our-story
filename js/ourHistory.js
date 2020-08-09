@@ -1,14 +1,3 @@
-//wave用のJS
- var $ = jQuery;
-  $('#wave').wavify({
-  height: 260,
-  bones: 3,
-  amplitude: 40,
-  color: '#a1a1a1',
-  speed: .25
-  });
-
-
 
 //マーカーを引く用のJS
   var $ = jQuery;
@@ -17,14 +6,15 @@
       var position = $(this).offset().top;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
-      if (scroll > position - windowHeight + 560){
+      console.log(scroll);
+      if (scroll > position - windowHeight){
         $(this).addClass('is-active');
       }
     });
    });
 
 let intViewportHeight = window.innerHeight;
-if(intViewportHeight < 500){
+if(intViewportHeight < 414){
   let takenIdName = document.getElementById('wave_wrp');
   let logoStyle = document.getElementById('logo');
   let ourHistoryStyle = document.getElementById('our_history');
@@ -44,3 +34,22 @@ if(intViewportHeight < 500){
   styleElem5.innerHTML = "body #arrows span:nth-of-type(3):before {position:absolute; top:158%; left:50%; z-index:10;}";
   styleElem6.innerHTML = "body #arrows span:nth-of-type(3):after {position:absolute; top:calc(158% - 1px); left:50%;  z-index:10;}";
 };
+
+if(intViewportHeight < 720){
+  var $ = jQuery;
+   $('#wave').wavify({
+   height: 200,
+   bones: 3,
+   amplitude: 40,
+   color: '#a1a1a1',
+   speed: .25
+   });
+}else{
+  $('#wave').wavify({
+  height: 260,
+  bones: 3,
+  amplitude: 40,
+  color: '#a1a1a1',
+  speed: .25
+  });
+}
